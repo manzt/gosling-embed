@@ -1,12 +1,5 @@
 import { embed as goslingEmbed } from "gosling.js";
-
-/**
- * Inject Higlass CSS. Esbuild is configured to inline the .css as text.
- */
-import css from "higlass/dist/hglib.css";
-const style = document.createElement("style");
-style.innerText = css;
-document.head.appendChild(style).setAttribute("type", "text/css");
+import "higlass/dist/hglib.css";
 
 // https://github.com/vega/vega-embed/blob/master/src/container.ts
 const container = async (spec, opt = {}) => {
@@ -29,6 +22,5 @@ export const embed = (...args) => {
   ) {
     return goslingEmbed(args[0], args[1], args[2]);
   }
-
   return container(args[0], args[1]);
 };
