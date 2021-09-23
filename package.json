@@ -7,6 +7,11 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "prepare": "npm run build",
     "build": "node build"
