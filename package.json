@@ -1,20 +1,27 @@
 {
   "name": "@manzt/gosling-embed",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "An embed utility for gosling.js",
-  "main": "gosling-embed.js",
+  "main": "dist/index.js",
   "files": [
-    "gosling-embed.js"
+    "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "prepare": "npm run build",
-    "build": "NODE_ENV=production node build"
+    "build": "node build"
   },
   "author": "Trevor J Manz",
   "license": "MIT",
   "dependencies": {
-    "esbuild": "^0.12.20",
-    "gosling.js": "^0.9.8"
+    "gosling.js": "file:/Users/hms-manzt/github/gosling-lang/gosling.js/gosling.js-0.9.8.tgz"
+  },
+  "devDependencies": {
+    "esbuild": "^0.13.0"
   }
 }
